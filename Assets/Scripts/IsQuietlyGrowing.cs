@@ -12,6 +12,12 @@ public class IsQuietlyGrowing : MonoBehaviour
     private float _timeCurrent;
     
     public float rottenDuration = 10.0f;
+    
+    public float durationBeforeDestroy = 3.0f;
+
+    public float bonusTime = 0.0f;
+    
+    private bool _isReceivingWater = false;
 
     public enum ColorState // pour savoir à quel état est la graine ailleurs dans un autre script
     {
@@ -31,6 +37,11 @@ public class IsQuietlyGrowing : MonoBehaviour
     void Update()
     {
         _timeCurrent += Time.deltaTime;
+        // si l'eau est bien dans la zone alors le bonus s'applique
+        if (_isReceivingWater)
+        {
+            _timeCurrent += bonusTime * Time.deltaTime;
+        }
         // interpolation linéaire de 0 à 1. condition de fin : timeCurrent >= randomDuration
         transform.localScale = Vector3.Lerp(initialScale, finalScale, _timeCurrent / randomDuration);
         if (_timeCurrent >= randomDuration && colorState == ColorState.Initial)
@@ -42,7 +53,12 @@ public class IsQuietlyGrowing : MonoBehaviour
         {
             GetComponent<Renderer>().material.color = Color.saddleBrown;
             colorState = ColorState.Rotten;
-            Destroy(gameObject, 2.0f);
+            Destroy(gameObject, durationBeforeDestroy);
         }
+    }
+    
+    public void SetIsReceivingWater(bool isReceivingWater)
+    {
+        _isReceivingWater = isReceivingWater;
     }
 }

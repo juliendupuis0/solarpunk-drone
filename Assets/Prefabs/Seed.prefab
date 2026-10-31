@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6136026551046845800}
   - component: {fileID: 97752975088627096}
   - component: {fileID: 5230587150861795159}
+  - component: {fileID: 1699456511521406664}
   m_Layer: 0
   m_Name: Seed
   m_TagString: Untagged
@@ -107,7 +108,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -130,3 +131,34 @@ MonoBehaviour:
   randomDuration: 0
   initialScale: {x: 0.1, y: 0.1, z: 0.1}
   finalScale: {x: 1, y: 1, z: 1}
+  rottenDuration: 10
+  durationBeforeDestroy: 3
+  bonusTime: 1.5
+  colorState: 0
+--- !u!54 &1699456511521406664
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890193729614285066}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
