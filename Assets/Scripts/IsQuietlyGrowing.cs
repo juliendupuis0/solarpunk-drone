@@ -9,7 +9,18 @@ public class IsQuietlyGrowing : MonoBehaviour
     public Vector3 initialScale;
     public Vector3 finalScale;
 
-    private float timeCurrent;
+    private float _timeCurrent;
+    
+    public float rottenDuration = 10.0f;
+
+    private enum ColorState
+    {
+        Initial,
+        Rotting,
+        Rotten
+    };
+    
+    private ColorState _colorState = ColorState.Initial;
     
     void Start()
     {
@@ -19,8 +30,18 @@ public class IsQuietlyGrowing : MonoBehaviour
 
     void Update()
     {
-        timeCurrent += Time.deltaTime;
+        _timeCurrent += Time.deltaTime;
         // interpolation linéaire de 0 à 1. condition de fin : timeCurrent >= randomDuration
-        transform.localScale = Vector3.Lerp(initialScale, finalScale, timeCurrent / randomDuration);
+        transform.localScale = Vector3.Lerp(initialScale, finalScale, _timeCurrent / randomDuration);
+        if (_timeCurrent >= randomDuration)
+        {
+            GetComponent<Renderer>().material.color = Color.forestGreen;
+            _colorState = ColorState.Rotting;
+        }
+        if (_timeCurrent >= rottenDuration)
+        {
+            GetComponent<Renderer>().material.color = Color.saddleBrown;
+            _colorState = ColorState.Rotten;
+        }
     }
 }
