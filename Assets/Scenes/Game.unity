@@ -383,9 +383,10 @@ GameObject:
   - component: {fileID: 363986746}
   - component: {fileID: 363986750}
   - component: {fileID: 363986751}
+  - component: {fileID: 363986752}
   m_Layer: 0
   m_Name: Drone
-  m_TagString: Untagged
+  m_TagString: Drone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,6 +514,19 @@ MonoBehaviour:
   inputActionReference: {fileID: 75637506316776547, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   plantPrefab: {fileID: 1890193729614285066, guid: 616babb9082eef848bed77bfbf7e6218, type: 3}
   heightPosition: 0.5
+--- !u!114 &363986752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363986745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378fa2ead0d1166418d9e75e36ee148f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DroneWatering
+  inputActionReference: {fileID: 2439650087265044801, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +718,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
       propertyPath: m_Name
+      value: Drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
+      propertyPath: m_TagString
       value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}

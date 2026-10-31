@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 97752975088627096}
   - component: {fileID: 5230587150861795159}
   - component: {fileID: 1699456511521406664}
+  - component: {fileID: 8527201296009045175}
   m_Layer: 0
   m_Name: Seed
   m_TagString: Untagged
@@ -112,7 +113,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5230587150861795159
 MonoBehaviour:
@@ -126,10 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a8af9bcbca9d3469f020986c5558b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IsQuietlyGrowing
-  minDuration: 2.5
-  maxDuration: 7
+  minDuration: 5
+  maxDuration: 5
   randomDuration: 0
-  initialScale: {x: 0.1, y: 0.1, z: 0.1}
+  initialScale: {x: 1, y: 1, z: 1}
   finalScale: {x: 1, y: 1, z: 1}
   rottenDuration: 10
   durationBeforeDestroy: 3
@@ -162,3 +163,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8527201296009045175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890193729614285066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9af73c42b6ceb4da9eb2aa2c18b610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DroneDetector
