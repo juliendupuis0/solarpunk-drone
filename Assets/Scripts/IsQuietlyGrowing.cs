@@ -53,7 +53,7 @@ public class IsQuietlyGrowing : MonoBehaviour
         {
             GetComponent<Renderer>().material.color = Color.saddleBrown;
             colorState = ColorState.Rotten;
-            Destroy(gameObject, durationBeforeDestroy);
+            Destroy(transform.parent.gameObject, durationBeforeDestroy);
         }
     }
     
