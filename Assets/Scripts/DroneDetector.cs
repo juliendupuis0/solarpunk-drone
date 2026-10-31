@@ -23,7 +23,7 @@ public class DroneDetector : MonoBehaviour
     
     void Start()
     {
-        _scriptOfQuietlyGrowing = GetComponent<IsQuietlyGrowing>();
+        _scriptOfQuietlyGrowing = GetComponentInChildren<IsQuietlyGrowing>();
     }
 
     private void Update()
