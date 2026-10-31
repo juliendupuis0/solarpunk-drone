@@ -6,14 +6,18 @@ public class DroneWatering : MonoBehaviour
     public InputActionReference inputActionReference;
     public bool IsWatering { get; private set; }
     
+    public ParticleSystem waterParticles;
+    
     void OnWatering(InputAction.CallbackContext context)
     {
         IsWatering = true;
+        waterParticles.Play();
     }
     
     void StopWatering(InputAction.CallbackContext context)
     {
         IsWatering = false;
+        waterParticles.Stop();
     }
 
     void OnEnable()
