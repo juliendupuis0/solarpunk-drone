@@ -13,14 +13,14 @@ public class IsQuietlyGrowing : MonoBehaviour
     
     public float rottenDuration = 10.0f;
 
-    private enum ColorState
+    public enum ColorState // pour savoir à quel état est la graine ailleurs dans un autre script
     {
         Initial,
-        Rotting,
+        Ripe,
         Rotten
     };
     
-    private ColorState _colorState = ColorState.Initial;
+    public ColorState colorState = ColorState.Initial;
     
     void Start()
     {
@@ -33,15 +33,16 @@ public class IsQuietlyGrowing : MonoBehaviour
         _timeCurrent += Time.deltaTime;
         // interpolation linéaire de 0 à 1. condition de fin : timeCurrent >= randomDuration
         transform.localScale = Vector3.Lerp(initialScale, finalScale, _timeCurrent / randomDuration);
-        if (_timeCurrent >= randomDuration)
+        if (_timeCurrent >= randomDuration && colorState == ColorState.Initial)
         {
             GetComponent<Renderer>().material.color = Color.forestGreen;
-            _colorState = ColorState.Rotting;
+            colorState = ColorState.Ripe;
         }
-        if (_timeCurrent >= rottenDuration)
+        if (_timeCurrent >= rottenDuration && colorState == ColorState.Ripe)
         {
             GetComponent<Renderer>().material.color = Color.saddleBrown;
-            _colorState = ColorState.Rotten;
+            colorState = ColorState.Rotten;
+            Destroy(gameObject, 2.0f);
         }
     }
 }
