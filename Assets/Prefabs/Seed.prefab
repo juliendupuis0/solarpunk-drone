@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 174265158756063395}
   - component: {fileID: 6136026551046845800}
   - component: {fileID: 97752975088627096}
+  - component: {fileID: 5230587150861795159}
   m_Layer: 0
   m_Name: Seed
   m_TagString: Untagged
@@ -112,3 +113,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5230587150861795159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890193729614285066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a8af9bcbca9d3469f020986c5558b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsQuietlyGrowing
+  minDuration: 2.5
+  maxDuration: 7
+  randomDuration: 0
+  initialScale: {x: 0.1, y: 0.1, z: 0.1}
+  finalScale: {x: 1, y: 1, z: 1}
