@@ -5,6 +5,7 @@ public class DroneDetector : MonoBehaviour
     private DroneWatering _droneAboveSeed; // on va récupérer le drone qui est au dessus de la graine
     private IsQuietlyGrowing _scriptOfQuietlyGrowing;
     
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Drone"))
