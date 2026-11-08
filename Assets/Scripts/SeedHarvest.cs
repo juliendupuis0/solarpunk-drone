@@ -7,6 +7,7 @@ public class SeedHarvest : MonoBehaviour
     private IsQuietlyGrowing _seedGrowing;
     
     private bool _droneIsHere;
+    public ScoreManager scoreManager;
     
     void Start()
     {
@@ -34,6 +35,7 @@ public class SeedHarvest : MonoBehaviour
     {
         if (_droneIsHere && _seedGrowing.colorState == IsQuietlyGrowing.ColorState.Ripe)
         {
+            scoreManager.AddPoint();
             Destroy(gameObject);
         }
     }

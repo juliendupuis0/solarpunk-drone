@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,11 +7,13 @@ public class DronePlanter : MonoBehaviour
     public InputActionReference inputActionReference;
     public GameObject plantPrefab;
     public float heightPosition; // hauteur de la graine plantée
+    public ScoreManager scoreManager;
     
     void OnPlant(InputAction.CallbackContext context)
     {
         Vector3 positionSeed = new Vector3(transform.position.x, heightPosition, transform.position.z); // toujours même hauteur, position relative au drone (X & Z)
-        Instantiate(plantPrefab, positionSeed, Quaternion.identity);
+        GameObject newSeed = Instantiate(plantPrefab, positionSeed, Quaternion.identity);
+        newSeed.GetComponent<SeedHarvest>().scoreManager = scoreManager;
     }
     
     void OnEnable()
@@ -25,4 +28,5 @@ public class DronePlanter : MonoBehaviour
         inputActionReference.action.performed -= OnPlant;
         inputActionReference.action.Disable();
     }
+
 }
