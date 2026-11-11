@@ -20,6 +20,8 @@ public class IsQuietlyGrowing : MonoBehaviour
     private bool _isReceivingWater = false;
     
     private Animator _animator;
+    
+    public AudioSource audioSource;
 
     public enum ColorState // pour savoir à quel état est la graine ailleurs dans un autre script
     {
@@ -58,6 +60,7 @@ public class IsQuietlyGrowing : MonoBehaviour
             GetComponent<Renderer>().material.color = Color.saddleBrown;
             colorState = ColorState.Rotten;
             _animator.SetTrigger("Rotten");
+            audioSource.PlayDelayed(durationBeforeDestroy - 0.4f);
             Destroy(transform.root.gameObject, durationBeforeDestroy);
         }
     }
