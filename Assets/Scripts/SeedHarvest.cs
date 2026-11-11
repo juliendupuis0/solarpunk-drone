@@ -8,6 +8,7 @@ public class SeedHarvest : MonoBehaviour
     
     private bool _droneIsHere;
     public ScoreManager scoreManager;
+    public GameObject harvestParticles;
     
     void Start()
     {
@@ -36,6 +37,7 @@ public class SeedHarvest : MonoBehaviour
         if (_droneIsHere && _seedGrowing.colorState == IsQuietlyGrowing.ColorState.Ripe)
         {
             scoreManager.AddPoint();
+            Instantiate(harvestParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

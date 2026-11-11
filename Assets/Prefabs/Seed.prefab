@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SeedHarvest
   scoreManager: {fileID: 0}
+  harvestParticles: {fileID: 7733329950021334914, guid: 04d074ca8b0042d4dbe1ab0a7e005cc7, type: 3}
 --- !u!1 &3724076463543053272
 GameObject:
   m_ObjectHideFlags: 0
