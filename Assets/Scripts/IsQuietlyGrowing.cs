@@ -22,6 +22,8 @@ public class IsQuietlyGrowing : MonoBehaviour
     private Animator _animator;
     
     public AudioSource audioSource;
+    
+    public ParticleSystem particleSystem;
 
     public enum ColorState // pour savoir à quel état est la graine ailleurs dans un autre script
     {
@@ -61,6 +63,7 @@ public class IsQuietlyGrowing : MonoBehaviour
             colorState = ColorState.Rotten;
             _animator.SetTrigger("Rotten");
             audioSource.PlayDelayed(durationBeforeDestroy - 0.4f);
+            particleSystem.Play();
             Destroy(transform.root.gameObject, durationBeforeDestroy);
         }
     }
