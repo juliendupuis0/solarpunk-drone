@@ -9,13 +9,12 @@ public class DroneWatering : MonoBehaviour
     public ParticleSystem waterParticles;
     
     public AudioSource audioSource;
-    public AudioClip waterSound;
     
     void OnWatering(InputAction.CallbackContext context)
     {
         IsWatering = true;
         waterParticles.Play();
-        audioSource.PlayOneShot(waterSound);
+        audioSource.Play();
     }
     
     void StopWatering(InputAction.CallbackContext context)
