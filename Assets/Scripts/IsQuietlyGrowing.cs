@@ -18,6 +18,8 @@ public class IsQuietlyGrowing : MonoBehaviour
     public float bonusTime = 0.0f;
     
     private bool _isReceivingWater = false;
+    
+    private Animator _animator;
 
     public enum ColorState // pour savoir à quel état est la graine ailleurs dans un autre script
     {
@@ -32,6 +34,7 @@ public class IsQuietlyGrowing : MonoBehaviour
     {
         randomDuration = Random.Range(minDuration, maxDuration);
         transform.localScale = initialScale;
+        _animator = GetComponentInParent<Animator>();
     }
 
     void Update()
@@ -48,11 +51,13 @@ public class IsQuietlyGrowing : MonoBehaviour
         {
             GetComponent<Renderer>().material.color = Color.forestGreen;
             colorState = ColorState.Ripe;
+            _animator.SetTrigger("Ripe");
         }
         if (_timeCurrent >= rottenDuration && colorState == ColorState.Ripe)
         {
             GetComponent<Renderer>().material.color = Color.saddleBrown;
             colorState = ColorState.Rotten;
+            _animator.SetTrigger("Rotten");
             Destroy(transform.root.gameObject, durationBeforeDestroy);
         }
     }
