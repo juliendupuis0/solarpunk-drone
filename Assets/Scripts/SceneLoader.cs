@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// chargement des scènes
+
 public class SceneLoader : MonoBehaviour
 {
       public void LoadScene(string nameScene)

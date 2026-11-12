@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// gère le menu pause : met en pause le jeu, rend impossible toute action du joueur
+
 public class PauseMenu : MonoBehaviour
 {
     public InputActionReference pauseMenuInput;

@@ -2,6 +2,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// gère le score et le temps de jeu
+
 public class ScoreManager : MonoBehaviour
 {
     private int _nbSeedsHarvested = 0;

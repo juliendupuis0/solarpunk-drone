@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 
+// affiche le meilleur temps de jeu en secondes
+
 public class BestTime : MonoBehaviour
 {
     public TextMeshProUGUI bestTimeText;
