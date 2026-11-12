@@ -10,11 +10,11 @@ public class BestTime : MonoBehaviour
         float bestTime = PlayerPrefs.GetFloat("bestTime", 1000.0f);
         if (bestTime == 1000.0f)
         {
-            bestTimeText.text = "Best Time : 0";
+            bestTimeText.text = "Meilleur temps : 0s";
         }
         else
         {
-            bestTimeText.text = "Best Time : " + bestTime.ToString("F1");
+            bestTimeText.text = "Meilleur temps : " + bestTime.ToString("F1") + "s";
         }
     }
     
