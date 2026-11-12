@@ -26,16 +26,22 @@ public class DroneWatering : MonoBehaviour
 
     void OnEnable()
     {
-        inputActionReference.action.Enable();
-        inputActionReference.action.performed += OnWatering;
-        inputActionReference.action.canceled += StopWatering;
+        if (Time.timeScale > 0)
+        {
+            inputActionReference.action.Enable();
+            inputActionReference.action.performed += OnWatering;
+            inputActionReference.action.canceled += StopWatering;
+        }
     }
 
     void OnDisable()
     {
-        inputActionReference.action.performed -= OnWatering;
-        inputActionReference.action.canceled -= StopWatering;
-        inputActionReference.action.Disable();
-        IsWatering = false;
+        if (Time.timeScale > 0)
+        {
+            inputActionReference.action.performed -= OnWatering;
+            inputActionReference.action.canceled -= StopWatering;
+            inputActionReference.action.Disable();
+            IsWatering = false;
+        }
     }
 }

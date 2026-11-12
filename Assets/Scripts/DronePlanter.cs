@@ -14,15 +14,18 @@ public class DronePlanter : MonoBehaviour
     
     void OnPlant(InputAction.CallbackContext context)
     {
-        Vector3 positionSeed = new Vector3(transform.position.x, heightPosition, transform.position.z); // toujours même hauteur, position relative au drone (X & Z)
-        GameObject newSeed = Instantiate(plantPrefab, positionSeed, Quaternion.identity);
-        newSeed.GetComponent<SeedHarvest>().scoreManager = scoreManager;
-        audioSource.PlayOneShot(plantSound);
+        // si menu pause est activé
+        if (Time.timeScale > 0)
+        {
+            Vector3 positionSeed = new Vector3(transform.position.x, heightPosition, transform.position.z); // toujours même hauteur, position relative au drone (X & Z)
+            GameObject newSeed = Instantiate(plantPrefab, positionSeed, Quaternion.identity);
+            newSeed.GetComponent<SeedHarvest>().scoreManager = scoreManager;
+            audioSource.PlayOneShot(plantSound);
+        }
     }
     
     void OnEnable()
     {
-        // si performed alors += OnPlant
         inputActionReference.action.Enable();
         inputActionReference.action.performed += OnPlant;
     }
