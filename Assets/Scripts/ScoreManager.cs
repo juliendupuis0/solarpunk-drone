@@ -12,10 +12,13 @@ public class ScoreManager : MonoBehaviour
     public AudioClip harvestSound;
 
     public int objectiveScore = 30;
+    
+    public float bestTime;
 
     void Start()
     {
         textScore.text = "Score : " + _nbSeedsHarvested;
+        bestTime = PlayerPrefs.GetFloat("bestTime", 1000.0f);
     }
     
     public void AddPoint()
@@ -30,6 +33,12 @@ public class ScoreManager : MonoBehaviour
     {
         if (_nbSeedsHarvested >= objectiveScore)
         {
+            if (Time.timeSinceLevelLoad < bestTime)
+            {
+                bestTime = Time.timeSinceLevelLoad;
+                PlayerPrefs.SetFloat("bestTime", bestTime);
+            }
+            PlayerPrefs.Save();
             SceneManager.LoadScene("End");
         }
     }
