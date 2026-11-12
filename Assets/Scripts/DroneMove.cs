@@ -9,8 +9,11 @@ public class DroneMove : MonoBehaviour
     void Update()
     {
         Vector2 input = inputActionReference.action.ReadValue<Vector2>();
-        Vector3 inputVector = new Vector3(input.x, 0, input.y); // pour se déplacer sur le plan horizontal vu de dessus
+        // pour se déplacer sur le plan horizontal vu de dessus
+        Vector3 inputVector = new Vector3(input.x, 0, input.y);
         transform.Translate(inputVector * speed * Time.deltaTime);
+        // autorise le déplacement du drone uniquement sur le champ
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -10, 10), transform.position.y, Mathf.Clamp(transform.position.z, -10, 10));
     }
     
     void OnEnable()
