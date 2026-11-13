@@ -66,6 +66,6 @@ Jeu développé avec Unity 6.3 LTS
 - Récolte : « Sickle Cutting Crop Sound Effect » par Prmodrai, [Lien](https://pixabay.com/fr/sound-effects/films-et-effets-sp%C3%A9ciaux-sickle-cutting-crop-sound-effectfarming-asmr%E0%A4%B8%E0%A4%B0%E0%A4%B0-%E0%A4%B8%E0%A4%B0%E0%A4%B0mp-578612/)
 - Éclatement : « Wet Splat Impact » par Universfield, [Lien](https://pixabay.com/fr/sound-effects/films-et-effets-sp%C3%A9ciaux-wet-splat-impact-567197/)
 
-Programmation, game design et intégration : KingfisherGaming.
+Programmation, UI, animation, intégration​ : KingfisherGaming.
 
 *Directives données dans le cadre du cours de [Fangh](https://fangh.itch.io/).*
