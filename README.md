@@ -14,6 +14,8 @@ Jouable dans le navigateur : [Sur Itch.io](https://kingfishergaming.itch.io/pota
 - Prefabs : `Assets/Prefabs`
 - Contrôles (Input System) : `Assets/InputSystem_Actions.inputactions`
 
+## Le jeu
+
 Incarnez un drone au-dessus d'un champ.
 Vous avez 3 objectifs :
 
@@ -66,4 +68,4 @@ Jeu développé avec Unity 6.3 LTS
 
 Programmation, game design et intégration : KingfisherGaming.
 
-Directives données dans le cadre du cours de [Fangh](https://fangh.itch.io/).
+*Directives données dans le cadre du cours de [Fangh](https://fangh.itch.io/).*
